@@ -1,0 +1,60 @@
+class Product
+{
+    private productId:number = 0;
+    private productName:string = "";
+    private unitPrice:number = 0;
+    private qty:number = 0;
+    constructor(productId:number)
+    {
+        this.productId = productId;
+    }
+    get ProductId():number
+    {
+        return this.productId;
+    }
+
+    get ProductName():string
+    {
+        return this.productName;
+    }
+    set ProductName(name:string)
+    {
+        this.productName = name;
+    }
+
+    get UnitPrice():number
+    {
+        return this.unitPrice;
+    }
+    set UnitPrice(price:number)
+    {
+        this.unitPrice = price;
+    }
+
+    get Quantity():number
+    {
+        return this.qty;
+    }
+    set Quantity(quantity:number)
+    {
+        this.qty = quantity;
+    }
+}
+
+let P:Product = new Product(10255);
+P.ProductName = "Samsung";
+P.UnitPrice = 45000;
+P.Quantity = 3;
+console.log(`Product Details :: Id : ${P.ProductId}, Name : ${P.ProductName}, Unit Price : ${P.UnitPrice}, Quantity : ${P.Quantity}`);
+
+let P1:Product = new Product(10256);
+P1.ProductName = "i Phone";
+P1.UnitPrice = 60000;
+P1.Quantity = 1;
+console.log(`Product Details :: Id : ${P1.ProductId}, Name : ${P1.ProductName}, Unit Price : ${P1.UnitPrice}, Quantity : ${P1.Quantity}`);
+
+let P2:Product = new Product(10257);
+P2.ProductName = "i Pad";
+P2.UnitPrice = 34500.50;
+P2.Quantity = 4;
+console.log(`Product Details :: Id : ${P2.ProductId}, Name : ${P2.ProductName}, Unit Price : ${P2.UnitPrice}, Quantity : ${P2.Quantity}`);
