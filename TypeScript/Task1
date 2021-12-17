@@ -1,0 +1,24 @@
+
+class Customer
+{
+    public cid:number = 0;
+    public cname:string = "";
+    constructor(cid:number = 0, cname:string = "", public city:string = "")
+    {
+        this.cid = cid;
+        this.cname = cname;
+    }
+
+    public showDetails():void
+    {
+        console.log(`Customer Details :: Id : ${this.cid}, Name : ${this.cname}, City : ${this.city}`);
+    }
+}
+let C:Customer = new Customer();
+let C1:Customer = new Customer(10256);
+C1.showDetails();
+let C2:Customer = new Customer(10256, "Harry");
+C2.showDetails();
+let C3:Customer = new Customer(10256, "Harry", "Bangalore");
+C3.showDetails();
+
