@@ -1,2 +1,2 @@
-# Task-
+# Angular Tasks
 Repository for Assignments
