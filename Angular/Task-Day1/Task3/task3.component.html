@@ -1,0 +1,38 @@
+
+<h1>Task-3</h1>
+<style>
+    * {
+  box-sizing: border-box;
+  
+}
+    .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  background-color: dimgrey;
+  display: table;
+}
+</style>
+    
+    <div class="row" >
+
+        <div *ngFor="let Img of Array" class="column" >
+  
+          <div style="background: ghostwhite;">
+  
+            <h3 style="text-align: center;"><img style="width: 100px;height:100px;" src="{{Img.tImage}}" alt=""></h3>
+  
+            <p style="text-align: center;"><b>{{Img.tname}}</b></p>
+  
+            <p style="text-align: center;">{{Img.tdescription}}</p>
+  
+          </div>
+  
+        </div>
+    
