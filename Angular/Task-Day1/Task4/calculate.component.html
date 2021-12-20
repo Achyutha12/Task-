@@ -1,0 +1,16 @@
+<h1>Data Binding Task</h1>
+<hr/>
+<fieldset>
+    <legend>Calulate total amount</legend>
+    Product Name : <input type="text" [(ngModel)] = "prodName"/>
+    <br/><br/>
+
+     Unit Price : <input type="number" [(ngModel)] = "unitprice"/>
+    <br/><br/>
+
+     Quantity : <input type="number" [(ngModel)] = "qty"/>
+    <br/><br/>
+
+    <button (click)="getTotal_click()">Get Total</button>
+    <p>{{price}}</p>
+</fieldset>
