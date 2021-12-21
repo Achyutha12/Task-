@@ -1,0 +1,60 @@
+<fieldset>
+    <legend>Add Product</legend>
+    Product Id : <input type="number" [(ngModel)]="pid"/>
+    <br/><br/>
+
+    Product Name: <input type="text" [(ngModel)]="pname"/>
+    <br/><br/>
+
+    Unit Price: <input type="number" [(ngModel)]="price"/>
+    <br/><br/>
+
+    Category: <input type="text" [(ngModel)]="category"/>
+    <br/><br/>
+
+    Quantity: <input type="number" [(ngModel)]="qty"/>
+    <br/><br/>
+
+    <button (click)="getproduct()">Add</button>
+    <style>
+        table, tr, td,th {
+          border: 1px solid black;
+        }
+        </style>
+    <table >
+        <tr>
+            <th>
+                Product Id
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+               Unit Price
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+        <tr *ngFor="let p of productlist">
+            <td>
+                {{p.pid}}
+            </td>
+            <td>
+                {{p.pname}}
+            </td>
+            <td>
+                {{p.price}}
+            </td>
+            <td>
+                {{p.category}}
+            </td>
+            <td>
+                {{p.qty}}
+            </td>
+        </tr>
+    </table>
+</fieldset>
