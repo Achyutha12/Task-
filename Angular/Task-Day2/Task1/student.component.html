@@ -1,0 +1,60 @@
+<fieldset>
+    <legend>Student Details</legend>
+    Student Id : <input [disabled]="isStudentidDisable" type="number" [(ngModel)]="sid" />
+    <br/><br/>
+
+    Student Name : <input type="text" [(ngModel)]="sname"/>
+    <br/><br/>
+
+    Course : <input type="text" [(ngModel)]="course"/>
+    <br/><br/>
+
+    Contact : <input type="tel" [(ngModel)]="contact"/>
+    <br/><br/>
+
+    <input type="button" value="Get Student" (click)="getStudent()" />
+    <input type="button" value="Add Student" (click)="addStudent()" />
+    <input type="button" value="Update Student" (click)="updateStudent()" />
+    <input type="button" value="Clear Fields" (click)="clearFields()" />
+
+    <p align="center" style="color:red;">{{message}}</p>
+</fieldset>
+<hr/>
+<style>
+    * {
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: arial;
+  
+}
+    .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  background-color: dimgrey;
+  display: table;
+}
+</style>
+
+<div class="row" >
+
+    <div *ngFor="let s of stuarray" class="column" >
+      <div style="background-color: lightgray;">
+        <p style="text-align: left;;"><strong>Student Id: </strong><b>{{s.sid}}</b></p>
+        <p style="text-align: left;;"><strong>Student Name: </strong><b>{{s.sname}}</b></p>
+        <!-- <p style="text-align: left;;"><strong>DOB: </strong><b>{{s.dob}}</b></p> -->
+        <p style="text-align: left;;"><strong>Course: </strong><b>{{s.course}}</b></p>
+        <p style="text-align: left;;"><strong>Contact: </strong><b>{{s.contact}}</b></p>
+        <img src="assets/images/Delete.png" (click)="deleteStudent(s.sid)" style="width: 30px; height: 30px; " /> <span></span>
+        <img src="assets/images/Select.png" (click)="selectStudent(s.sid)" style="width: 30px; height: 30px;" />
+        </div>
+    </div>
+    <div *ngIf="stuarray.length == 0">
+        <p align="center" style="color:red;"> **No records found.** </p>
+    </div>
