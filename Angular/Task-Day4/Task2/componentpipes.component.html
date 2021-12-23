@@ -1,0 +1,36 @@
+
+<style>
+   
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<div style="background-color: wheat;">
+<h1 style="text-align: center; ">Employee Details</h1>
+<hr/>
+<table style="margin-left: auto; margin-right: auto;">
+    <tr style="background-color: lightslategray;">
+        <th>
+            S.No.
+        </th>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Performance
+        </th>
+    </tr>
+    <tr *ngFor="let item of empDetails" style="background-color: rgb(212, 145, 44);">
+        <td>
+            {{item.empno}}
+        </td>
+        <td>
+            {{item.empName | uppercase}}
+        </td>
+        <td>
+            {{item.preformance | employeepipe}}
+        </td>
+    </tr>
+</table>
+</div>
