@@ -1,0 +1,16 @@
+<style>
+    .c{
+        background-color: lightsteelblue;
+        border: 1px; 
+        padding: 10px;
+        text-align: center; 
+    }
+</style>
+<ng-content></ng-content>
+<div class="c"> 
+<a href="javascript:void(0)" (mouseover)="selectEmpNo = 'EmpNo' " (click)="updateEmpNo()"  >EmpNo </a> ||
+<a href="javascript:void(0)" (mouseover)="selectEmpNo = 'EmpName' " (click)="updateEmpNo()"  >EmpName </a> ||
+<a href="javascript:void(0)" (mouseover)="selectEmpNo = 'EmpJob' " (click)="updateEmpNo()"  >EmpJob </a> ||
+<a href="javascript:void(0)" (mouseover)="selectEmpNo = 'EmpSalary' " (click)="updateEmpNo()"  >EmpSalary </a> ||
+<a href="javascript:void(0)" (mouseover)="selectEmpNo = 'EmpDeptNo' " (click)="updateEmpNo()"  >EmpDeptNo </a> 
+</div>
