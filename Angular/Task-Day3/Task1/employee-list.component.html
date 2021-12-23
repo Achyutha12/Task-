@@ -1,0 +1,48 @@
+<style>
+    .c{
+        background-color: wheat;
+        border: 1px; 
+        padding: 10px;
+    }
+</style>
+
+<div class="c">
+<table border="1" style="background-color: white; text-align: center; margin-left: auto; margin-right: auto;"  >
+    <tr >
+        <th>
+            Emp No
+        </th>
+        <th>
+            Emp Name
+        </th>
+        <th>
+            Emp Job
+        </th>
+        <th>
+            Emp Salary
+        </th>
+        <th>
+            Emp Dept
+        </th>
+    </tr>
+    <tr *ngFor="let e of tempArray">
+        <td>
+            {{e.empno}}
+        </td>
+        <td>
+            {{e.empname}}
+        </td>
+        <td>
+            {{e.empjob}}
+        </td>
+        <td>
+            {{e.empsalary}}
+        </td>
+        <td>
+            {{e.empdeptno}}
+        </td>
+    </tr>
+</table>
+</div>
+<ng-content></ng-content>
+
