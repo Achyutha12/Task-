@@ -1,0 +1,27 @@
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius : 10px;
+        width : 200px;
+        padding : 5px;
+        text-align: center;
+        margin: 5px;
+        float:left;
+        box-shadow: 5px 5px 2px black;
+    }
+  </style>
+
+<h2>Employee Details</h2>
+
+<input type="button" value="Load More >>"  (click)="nextUser_Click()" [hidden]="hide"/>
+
+<div style="border: 2px solid black ;">
+</div>
+<div *ngFor="let obj of empData | slice : start : end" class="c1">
+    <h3 style="margin: 2px;color:Red;">Employee Id : {{obj.empno}} </h3>
+    <u> Employee Name :   {{obj.ename | titlecase}} </u>  <br/>
+    <u> Job :   {{obj.job | uppercase}} </u>  <br/>
+    <u> Salary :   {{obj.sal | currency : "INR"}} </u>  <br/>
+    <u> Department No  :   {{obj.deptno}} </u>  <br/>
+  </div>
