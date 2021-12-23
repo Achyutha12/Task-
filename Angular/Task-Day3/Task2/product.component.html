@@ -1,0 +1,92 @@
+<style>
+    .bg1{ background-color :  lightblue;  }
+    .bg2{ background-color :  lightgreen;  }
+    .bg3{ background-color :  pink;  }
+  
+    .c1
+    {
+      color : blue;
+      border:1px solid green;
+      width :  100px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : lightyellow;
+    }
+  
+    .c2
+    {
+       background-color: green;
+       color : white;
+       margin: 0px;
+    }
+  
+  </style>
+  
+  <!-- Select Display Mode :
+  <select [(ngModel)]="mode">
+    <option>List</option>
+    <option>Table</option>
+    <option>Card</option>
+    <option>Others</option>
+  </select> -->
+
+  <!-- Select Display Mode : 
+  List: <input  type="radio" [(ngModel)]="mode" value="List"/>
+  Table: <input  type="radio" [(ngModel)]="mode" value="Table"/>
+  Card: <input  type="radio" [(ngModel)]="mode" value="Card"/>
+  Others: <input  type="radio" [(ngModel)]="mode" value="Others"/> -->
+
+<h4>Select Display Mode :</h4>  
+<img src="assets/images/list.jfif" style="width: 50px; height: 50px;" (click)="mode = 'List'  " />|
+<img src="assets/images/tables.webp" style="width: 50px; height: 50px;" (click)="mode = 'Table' "  />|
+<img src="assets/images/cards.png" style="width: 50px; height: 50px;" (click)="mode = 'Card' "  />|
+<img src="assets/images/other.jfif" style="width: 50px; height: 50px;" (click)="mode = 'Others' "  />
+ 
+  
+  <section [ngSwitch]="mode">
+  
+    <article *ngSwitchCase=" 'List' ">
+      <ol>
+        <li *ngFor="let item of produArray">
+            Puocuct
+            <span style="color:blue; font-weight: bold;">{{item.pname}}</span>
+            Category 
+            <span  [ngStyle]="{color: (item.pname == 'Mobile'?'Red':'Green') }">{{item.category}}</span>
+            category.
+        </li>
+      </ol>
+    </article>
+  
+    <article *ngSwitchCase=" 'Table' ">
+      <table border="2" cellSpacing="0"  cellpadding="3">
+        <tr  class="bg1">
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Category</th>
+        </tr>
+            <tr   *ngFor="let item of produArray;  let i = index;  let x = even; let y = odd; "
+                  [ngClass]="{bg2:x,  bg3:y}">
+            <td> {{i+1}}  </td>
+            <td>{{item.pname}}</td>
+            <td>{{item.category}}</td>
+        </tr>
+  
+        <!-- Test the following row by delete items from the array in ts file -->
+        <tr *ngIf="produArray.length <= 0"  class="bg3">
+            <td colspan="3">**Product Details are not available. </td>
+        </tr>
+      </table>
+    </article>
+  
+    <article *ngSwitchCase=" 'Card' ">
+      <div class="c1" *ngFor="let item of produArray">
+        <p  class="c2">{{item.pname}}</p>
+        <span>{{item.category}}</span>
+        <br/>
+      </div>
+    </article>
+  
+    <article *ngSwitchDefault>This is DEFAULT format</article>
+  
+  </section>
