@@ -1,0 +1,7 @@
+<app-filter-options (onEmpSelected)="updateEmp_Parent($event)" (onEmpNoSelected)="updateEmpNo_Parent($event)">
+    <p style="text-align: center; border: 1px solid; padding: 5px; margin: 1px;background-color: lightgray;"><b>Emplyoee Details Table</b></p>
+    
+</app-filter-options>
+<app-employee-list [empList] = "selectEmp" [empNoSelect] ="selectEmpNo"> 
+    <p footer style="text-align: center; border: 1px solid; padding: 5px; margin: 1px; background-color: lightgray;">By Using Component sibbling connections with sort method and ng-content</p>
+</app-employee-list>
