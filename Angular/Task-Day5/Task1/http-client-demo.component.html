@@ -1,0 +1,28 @@
+<button (click)="getData_Click()">Get User Data</button>
+
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius : 10px;
+        width : 200px;
+        padding : 5px;
+        text-align: center;
+        margin: 5px;
+        float:left;
+        box-shadow: 5px 5px 2px black;
+    }
+    img
+    {
+        border-radius: 50%;
+    }
+  </style>
+  <div style="border: 2px solid black ;">
+    <ng-content></ng-content>
+    <ng-content select="[footer]"></ng-content>
+  </div>
+<div *ngFor="let obj of userArray" class="c1">
+    <img src="{{obj.avatar}}"/><br/>
+    <b> {{obj.first_name}}  {{obj.last_name}} </b>  <br/>
+    <u> {{obj.email}} </u>  <br/> 
+  </div>
