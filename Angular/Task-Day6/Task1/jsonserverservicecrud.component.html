@@ -1,0 +1,131 @@
+<style>
+    .c1
+    {
+      color : blue;
+      border:1px solid green;
+      width :  100px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : lightyellow;
+    }
+    .c2
+    {
+        border: 1px solid gray;
+        border-radius : 10px;
+        width : 200px;
+        padding : 5px;
+        text-align: center;
+        margin: 5px;
+        float:left;
+        box-shadow: 5px 5px 2px black;
+    }
+  
+    .c3
+    {
+       background-color: green;
+       color : white;
+       margin: 0px;
+    }
+</style>
+<fieldset>
+    <legend>Employee Details</legend>
+Emp Number: <input [disabled]="isEmpnoDisabled" type="text"  [(ngModel)]="empno"  placeholder="EmpNo"  />
+<br/><br/>
+Emp Name: <input type="text"  [(ngModel)]="ename"  placeholder="Emp Name"  />
+<br/><br/>
+Emp Location: <input type="text"  [(ngModel)]="eloc"  placeholder="Location"  />
+<br/><br/>
+Emp Salary: <input type="text"  [(ngModel)]="salary"  placeholder="Salary"  />
+<br/><br/>
+Emp Job: <input type="text"  [(ngModel)]="job"  placeholder="Job"  />
+<br/><br/>
+<input type="button"  value="Get Emp" (click)="getEmp_click()"  />
+<input type="button"  value="Add Emp" (click)="addEmp_click()"  />
+<input type="button"  value="Update Emp" (click)="updateEmp_click()"  />
+<input type="button"  value="Clear Fields" (click)="clearFields()"  />
+</fieldset>
+
+<hr/>
+<table border="2" >
+  <tr>
+    <th>Emp Number</th>
+    <th>Emp Name</th>
+    <th>Emp Location</th>
+    <th>Job</th>
+    <th>Salary</th>
+    <th></th>
+  </tr>
+
+  <tr *ngFor="let item of empsArray">
+    <td>{{item.empno}}</td>
+    <td>{{item.empname}}</td>
+    <td>{{item.emploc}}</td>
+    <td>{{item.job}}</td>
+    <td>{{item.salary}}</td>
+    <td align="center">
+      <a href="javascript:void(0);" (click)="selectEmp_click(item.empno)">Select</a> |
+      <a href="javascript:void(0);" (click)="deleteEmp_click(item.empno)">Delete</a>
+    </td>
+  </tr>
+
+  <tr *ngIf="empsArray.length == 0">
+    <td colspan="5" align="center" style="color:red;"> **No records found. </td>
+  </tr>
+
+</table>
+
+<hr/>
+
+Select Job :
+
+<select [(ngModel)]="strJob">
+    <option> </option>
+    <option>Analyst</option>
+    <option>Developer</option>
+    <option>Tester</option>
+</select>
+<input type="button" value="Get Emp By Job" (click)="getEmpByJob_click()"/><br/>
+<hr/>
+<input type="button" value="Get Emp Job" (click)="getEmpJob_click()"/>
+<input type="button" value="Get Emp Name and Job" (click)="getEmpNameAndJob_click()"/>
+<input type="button"  value="Wrong Request Url" (click)="wrongRequest_click()"  />
+<hr/>
+
+<!-- <table border="2">
+    <tr *ngFor="let item of tempArray">
+        <td>{{item}}</td>
+    </tr>
+</table> -->
+
+<!-- <table border="2">
+    <tr *ngFor="let item of empsArray1">
+        <td>{{item.empname}}</td>
+        <td>{{item.job}}</td>
+    </tr>
+</table> -->
+
+    
+<div *ngFor="let item of tempArray" class="c1">
+    <p class="c3">{{item}}</p>
+</div>
+
+<br/> <br/>
+
+<table border="2">
+    <tr *ngFor="let item of empsArray1">
+        <td><b>Emp Number: </b>{{item.empno}}</td>
+        <td><b> Name: </b>{{item.empname}}</td>
+        <td><b> Job: </b>{{item.job}}</td>
+        <td><b> Location: </b>{{item.emploc}}</td>
+        <td><b> Salary: </b>{{item.salary}}</td>
+    </tr>
+</table>
+
+<br/><br/>
+
+<div *ngFor="let item of empsArray2" class="c2">
+    <p><b> Name: </b>{{item.empname}}</p>
+    <p><b> Job: </b>{{item.job}}</p>
+    <br/>
+</div>
