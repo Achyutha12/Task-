@@ -1,0 +1,13 @@
+<h3>Generate Authentication Token using JSON-Server Auth Server</h3>
+<hr/>
+
+
+<fieldset>
+    <legend>User Login</legend>
+     User Id  :   <input  type="text"  [(ngModel)]="uid"   />
+     <br/><br/>
+     Password  :   <input  type="password"  [(ngModel)]="pwd"   />
+     <br/><br/>
+     <button [disabled]="isButtonDisabled" (click)="loginButton_click()">Login</button>
+     <p> {{result}} </p>
+</fieldset>
